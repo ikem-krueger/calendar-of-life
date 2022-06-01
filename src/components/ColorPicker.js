@@ -7,15 +7,13 @@ function ColorPicker() {
   return (
     <div id="colorPicker">
       {Object.keys(currentColorPalette).map(function (colorName, index) {
-        if (index > 0 && index % 6 == 0) {
-          return (
-            <Fragment>
-              <br></br><span style={{ color: currentColorPalette[colorName] }} title={colorName} key={index}>⬤</span>
-            </Fragment>
-          )
-        }
+        return (
+          <Fragment>
+            { (index > 0 && index % 6 == 0) && <br></br> }
 
-        return <span style={{ color: currentColorPalette[colorName] }} title={colorName} key={index}>⬤</span>;
+            <span style={{ color: currentColorPalette[colorName] }} title={colorName} key={index}>⬤</span>
+          </Fragment>
+        )
       })}
     </div>
   );
