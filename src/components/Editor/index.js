@@ -1,11 +1,11 @@
-import ColorPicker from "./ColorPicker";
-import "./Editor.css";
+import ColorPicker from "../ColorPicker";
+import "./style.css";
 
 const Editor = () => {
   return (
     <div id="editSection">
 
-      <ColorPicker></ColorPicker>
+      <ColorPicker />
 
       <input id="titleInput" placeholder="Title"></input>
 

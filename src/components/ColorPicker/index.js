@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import reasonable from "./ColorPalettes";
-import "./ColorPicker.css";
+import reasonable from "../ColorPalette";
+import "./style.css";
 
 const currentColorPalette = reasonable;
 

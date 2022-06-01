@@ -1,5 +1,5 @@
-import Editor from "./Editor";
-import "./App.css";
+import Editor from "../Editor";
+import "./style.css";
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
 
       <h1>Calender of life</h1>
 
-      <Editor></Editor>
+      <Editor />
 
     </div>
   );
