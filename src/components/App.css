@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  user-select: none;
+  font-size: 12px;
+  font-family: Verdana;
+}

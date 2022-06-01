@@ -1,0 +1,8 @@
+#colorPicker {
+  cursor: pointer;
+}
+
+#colorPicker span {
+  border: 1px solid white;
+  line-height: 1.4em;
+}
