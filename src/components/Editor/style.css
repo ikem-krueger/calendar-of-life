@@ -1,0 +1,13 @@
+#editSection {
+  position: absolute;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#editSection div,
+input {
+  display: block;
+  margin: 10px;
+}

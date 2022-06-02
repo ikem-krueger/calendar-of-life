@@ -1,0 +1,12 @@
+.phases {
+  list-style: none;
+}
+
+.phases li {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.phases span {
+  padding-right: 5px;
+}
