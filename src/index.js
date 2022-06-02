@@ -1,6 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from "./components/App"
+import Blocks from "./components/Blocks";
+import Editor from "./components/Editor";
+import Phases from "./components/Phases";
+import "./style.css";
+
+const App = () => {
+  return (
+    <div>
+
+      <h1>Calender of life</h1>
+
+      <h2>Years</h2>
+
+      <Blocks />
+
+      <h2>Phases</h2>
+
+      <Phases />
+
+      <Editor />
+
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
