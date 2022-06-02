@@ -1,4 +1,6 @@
+import Blocks from "../Blocks";
 import Editor from "../Editor";
+import Phases from "../Phases";
 import "./style.css";
 
 const App = () => {
@@ -6,6 +8,14 @@ const App = () => {
     <div>
 
       <h1>Calender of life</h1>
+
+      <h2>Years</h2>
+
+      <Blocks />
+
+      <h2>Phases</h2>
+
+      <Phases />
 
       <Editor />
 
