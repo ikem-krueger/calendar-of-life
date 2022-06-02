@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import reasonable from "../ColorPalette";
+import { reasonable } from "../../models/ColorPalettes";
 import "./style.css";
 
 const currentColorPalette = reasonable;

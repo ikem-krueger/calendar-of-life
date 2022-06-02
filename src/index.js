@@ -7,6 +7,8 @@ import Editor from "./components/Editor";
 
 import "./style.css";
 
+import erikson from './models/Phases';
+
 const App = () => {
   return (
     <div>
@@ -19,7 +21,7 @@ const App = () => {
 
       <h2>Phases</h2>
 
-      <Phases />
+      <Phases phases={erikson} />
 
       <Editor />
 
