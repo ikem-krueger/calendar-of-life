@@ -10,7 +10,7 @@ const ColorPicker = () => {
       {Object.keys(currentColorPalette).map(function (colorName, index) {
         return (
           <Fragment>
-            {(index > 0 && index % 6 == 0) && <br></br>}
+            {(index > 0 && index % 6 == 0) && <br />}
 
             <span style={{ color: currentColorPalette[colorName] }} title={colorName} key={index}>⬤</span>
           </Fragment>
