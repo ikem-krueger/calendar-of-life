@@ -2,9 +2,12 @@ import ColorPicker from "../ColorPicker";
 import "./style.css";
 
 const Editor = () => {
+  function handleClick(e) {
+    console.debug("Button clicked...")
+  }
+
   return (
     <div id="editSection">
-
       <ColorPicker />
 
       <input id="titleInput" placeholder="Title"></input>
@@ -13,9 +16,9 @@ const Editor = () => {
 
       <div className="btn-group">
 
-        <button id="addButton">Add</button>
-        <button id="updateButton" style={{ display: "none" }}>Update</button>
-        <button id="deleteButton">Delete</button>
+        <button id="addButton" onClick={handleClick}>Add</button>
+        <button id="updateButton" onClick={handleClick}>Update</button>
+        <button id="deleteButton" onClick={handleClick}>Delete</button>
 
       </div>
 
