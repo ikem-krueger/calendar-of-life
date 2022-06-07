@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { reasonable } from "../../models/ColorPalettes";
+import { custom } from "../../models/ColorPalettes";
 import "./style.css";
 
-const currentColorPalette = reasonable;
+const currentColorPalette = custom;
 
 const ColorPicker = ({ colorName = "Gray Shade 1" }) => {
   const [selectedColor, setSelectedColor] = useState(colorName)
@@ -17,11 +17,7 @@ const ColorPicker = ({ colorName = "Gray Shade 1" }) => {
         const color = currentColorPalette[colorName]
 
         return (
-          <>
-            {(index > 0 && index % 6 === 0) && <br />}
-
             <span onClick={handleClick} style={{ color: color, border: colorName === selectedColor && "1px solid " + color }} title={colorName}>⬤</span>
-          </>
         )
       })}
     </div>

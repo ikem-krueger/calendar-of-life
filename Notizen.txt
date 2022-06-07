@@ -1,0 +1,57 @@
+Geburtsjahr: 1983
+Wohnort: Deutschland -> Geo Location
+Alter: 38
+Zeit bis zur Rente: ?
+Renteneintrittsalter: 67
+Lebenserwartung: 70 Jahre
+
+    Verlängernd:
+
+        [ ] genug Schlaf
+        [ ] gesunde Ernährung
+        [ ] Meditation/Achtsamkeit
+        [ ] Therapie
+        [ ] Sport
+        [ ] Geschwister
+        [ ] gute Freunde
+        [ ] Partner
+        [ ] Kind(er)
+
+    Verkürzend:
+
+        [ ] Traumata
+        [ ] Stress
+        [ ] Depression
+        [ ] Einsamkeit
+        [ ] Alkohol
+        [ ] Zigaretten
+        [ ] Drogen
+
+Phasen des Lebens:
+
+1. Phase: [1    ] Säuglingsalter: Ur-Vertrauen vs. Ur-Misstrauen
+2. Phase: [2-3  ] Kleinkindalter: Autonomie vs. Scham und Zweifel
+3. Phase: [3-5  ] Spielalter: Initiative vs. Schuldgefühl
+4. Phase: [6-11 ] Schulalter: Werksinn vs. Minderwertigkeitsgefühl
+5. Phase: [12-18] Adoleszenz: Identität vs. Identitätsdiffusion
+6. Phase: [19-40] Frühes Erwachsenenalter: Intimität und Solidarität vs. Isolation
+7. Phase: [40-65] Erwachsenenalter: Generativität vs. Stagnation und Selbstabsorption
+8. Phase: [65+  ] Reifes Erwachsenenalter: Ich-Integrität vs. Verzweiflung
+
+Ereignisse:
+
+- Geburt
+- Beinahe ertrunken im Schwimmunterricht
+- Scheidung
+- Tod der Mutter
+- Tod des Vaters
+
+Quellen:
+
+* https://greator.com/erikson-stufenmodell/
+* https://karrierebibel.de/erikson-stufenmodell/
+* https://daryologia.wordpress.com/2015/01/06/erik-h-erikson-stuffenmodel-der-psychosozialen-entwicklung/
+* https://www.smart-rechner.de/rentenbeginn/ratgeber/renteneintrittsalter_tabelle.php
+* http://teachsam.de/psy/psy_entwick/psy_entw_3_4_2_1.htm
+* https://arbeitsblaetter.stangl-taller.at/PSYCHOLOGIEENTWICKLUNG/EntwicklungErikson.shtml
+* https://de.statista.com/statistik/daten/studie/273406/umfrage/entwicklung-der-lebenserwartung-bei-geburt-in-deutschland-nach-geschlecht/
