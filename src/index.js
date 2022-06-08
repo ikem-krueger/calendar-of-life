@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
 
+import Profile from './components/Profile';
 import Blocks from "./components/Blocks";
 import Phases from "./components/Phases";
+import Events from './components/Events';
 import Editor from "./components/Editor";
 
 import "./style.css";
@@ -10,44 +12,43 @@ import "./style.css";
 import { erikson, smv } from './models/Phases';
 
 const App = () => {
-  const events = [1, 38, 67, 70]
-  const foo = [
-    { color: "#D7091D", title: "Geburtsjahr", from: 1, to: 1 },
-    { color: "#2FBBCE", title: "Alter", from: 38, to: 38 },
-    { color: "#4F7193", title: "Renteneintrittsalter", from: 67, to: 67 },
-    { color: "#4F7193", title: "Lebenserwartung", from: 70, to: 70 }
-  ]
+  const profile = {
+    name: "Marco",
+    birthYear: 1983,
+    residence: "Deutschland/Berlin",
+    age: 38,
+    status: "Ledig",
+    children: "Keine"
+  }
+
+  const years = {
+    1: { color: "#D7091D", title: "Geburtsjahr" },
+    38: { color: "#2FBBCE", title: "Alter" },
+    67: { color: "#4F7193", title: "Renteneintrittsalter" },
+    70: { color: "#4F7193", title: "Lebenserwartung" }
+  }  
+  
+  const phases = smv
+  const bar = years
 
   return (
     <div>
 
       <h1>Calender of life</h1>
 
-      <ul>
-        <li>Name: Marco</li>
-        <li>Geburtsjahr: 1983</li>
-        <li>Wohnort: Deutschland, Berlin</li>
-        <li>Alter: 38 Jahre</li>
-        <li>Status: Ledig</li>
-        <li>Kinder: Keine</li>
-        <li>Zeit bis zur Rente: {67-38} Jahre</li>
-        <li>Renteneintrittsalter: 67 Jahre</li>
-        <li>Lebenserwartung: 70 Jahre</li>
-        <li>Zeit bis zum Tod: {70-38} Jahre</li>
-        <li>Gute Jahre: ? Jahre</li>
-      </ul>
+      <Profile profile={profile}/>
 
       <h2>Years</h2>
 
-      <Blocks phases={erikson} events={events} />
+      <Blocks phases={phases} events={bar} />
 
       <h2>Phases</h2>
 
-      <Phases phases={erikson} />
+      <Phases phases={phases} />
 
       <h2>Events</h2>
 
-      <Phases phases={foo} />
+      <Events years={bar} />
 
       <Editor />
 
