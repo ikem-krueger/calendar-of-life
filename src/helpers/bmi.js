@@ -1,4 +1,4 @@
-import { cmToMeter, roundToPlaces } from "./math";
+import { cmToMeter, roundToPlaces } from "./Math";
 
 function getWeightCategory(age, sex) {
   if (age < 2 && sex == "male") return [15.5, 16.8, 18.3];

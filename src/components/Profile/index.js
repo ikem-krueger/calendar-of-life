@@ -1,4 +1,4 @@
-import { calculateBmi, getWhoCategory } from "../../helpers/bmi";
+import { calculateBmi, getWhoCategory } from "../../helpers/BMI";
 
 const Profile = ({ profile }) => {
   const bmi = calculateBmi(profile.weight, profile.height)

@@ -1,14 +1,14 @@
 import "./style.css";
 
-const Events = ({ years }) => {
+const Events = ({ events }) => {
   function handleClick(e) {
     console.debug("Event clicked...");
-  }
+  }  
 
   const li = []
 
-  for (const year in years) {
-    const event = years[year]
+  for (const year in events) {
+    const event = events[year]
 
     li.push(<li><span style={{ color: event.color }}>&#x2B24;</span>{event.title}</li>)
   }
