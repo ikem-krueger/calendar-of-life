@@ -13,11 +13,11 @@ const ColorPicker = ({ colorName = "Gray Shade 1" }) => {
 
   return (
     <div id="colorPicker">
-      {Object.keys(currentColorPalette).map(function (colorName, index) {
+      {Object.keys(currentColorPalette).map((colorName, i) => {
         const color = currentColorPalette[colorName]
 
         return (
-            <span onClick={handleClick} style={{ color: color, border: colorName === selectedColor && "1px solid " + color }} title={colorName}>⬤</span>
+            <span key={i} onClick={handleClick} style={{ color: color, border: colorName === selectedColor && "1px solid " + color }} title={colorName}>⬤</span>
         )
       })}
     </div>

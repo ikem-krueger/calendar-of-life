@@ -17,13 +17,13 @@ const Blocks = ({ phases, events }) => {
         <tbody>
           {[...Array(10)].map((_, i) => {
             return (
-              <tr>
+              <tr key={i}>
                 {[...Array(10)].map((_, j) => {
                   const year = (i * 10) + (j + 1)
 
                   let color = ""
 
-                  phases.map((phase, index) => {
+                  phases.map((phase) => {
                     if (year >= phase.from && year <= phase.to) {
                       color = phase.color
                     }
@@ -35,7 +35,7 @@ const Blocks = ({ phases, events }) => {
                     content = "⬤"
 
                   return (
-                    <td title={"Age: " + year} style={color && { border: "1px solid " + color, color: color }}>{content}</td>
+                    <td key={j} title={"Age: " + year} style={color && { border: "1px solid " + color, color: color }}>{content}</td>
                   )
                 })}
               </tr>

@@ -10,8 +10,8 @@ const Phases = ({ phases }) => {
       <h2>Phases</h2>
 
       <ul className="phases" onClick={handleClick}>
-        {phases.map((phase) => {
-          return <li><span style={{ color: phase.color }}>&#x2B24;</span>{phase.title}</li>;
+        {phases.map((phase, i) => {
+          return <li key={i}><span style={{ color: phase.color }}>&#x2B24;</span>{phase.title}</li>;
         })}
       </ul>
     </>
