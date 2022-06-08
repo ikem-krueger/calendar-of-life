@@ -14,32 +14,34 @@ const Blocks = ({ phases, events }) => {
       <h2>Years</h2>
 
       <table onClick={handleClick}>
-        {[...Array(10)].map((_, i) => {
-          return (
-            <tr>
-              {[...Array(10)].map((_, j) => {
-                const year = (i * 10) + (j + 1)
+        <tbody>
+          {[...Array(10)].map((_, i) => {
+            return (
+              <tr>
+                {[...Array(10)].map((_, j) => {
+                  const year = (i * 10) + (j + 1)
 
-                let color = ""
+                  let color = ""
 
-                phases.map((phase, index) => {
-                  if (year >= phase.from && year <= phase.to) {
-                    color = phase.color
-                  }
-                })
+                  phases.map((phase, index) => {
+                    if (year >= phase.from && year <= phase.to) {
+                      color = phase.color
+                    }
+                  })
 
-                let content = ""
+                  let content = ""
 
-                if (years.includes(year))
-                  content = "⬤"
+                  if (years.includes(year))
+                    content = "⬤"
 
-                return (
-                  <td title={"Age: " + year} style={color && { border: "1px solid " + color, color: color }}>{content}</td>
-                )
-              })}
-            </tr>
-          )
-        })}
+                  return (
+                    <td title={"Age: " + year} style={color && { border: "1px solid " + color, color: color }}>{content}</td>
+                  )
+                })}
+              </tr>
+            )
+          })}
+        </tbody>
       </table>
     </>
   );

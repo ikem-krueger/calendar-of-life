@@ -10,7 +10,7 @@ import Editor from "./components/Editor";
 
 import "./style.css";
 
-import { eightStagesOfDevelopment } from './models/Phases'
+import { eightStagesOfDevelopment, smvTimeline } from './models/Phases'
 
 let profile = {
   name: "Marco",
