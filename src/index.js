@@ -9,7 +9,7 @@ import Editor from "./components/Editor";
 
 import "./style.css";
 
-import { erikson, smv } from './models/Phases';
+import { eightStagesOfDevelopment } from './models/Phases'
 
 const App = () => {
   const profile = {
@@ -24,6 +24,8 @@ const App = () => {
     sex: "male"
   }
 
+  const phases = eightStagesOfDevelopment
+
   const events = {
     1: { color: "#D7091D", title: "Year of birth" },
     38: { color: "#2FBBCE", title: "Current age" },
@@ -31,31 +33,19 @@ const App = () => {
     70: { color: "#4F7193", title: "Life expectancy" }
   }
 
-  const phases = erikson
-
   return (
     <div>
-
       <h1>Calender of life</h1>
-
-      <h2>Profile</h2>
 
       <Profile profile={profile} />
 
-      <h2>Years</h2>
-
       <Blocks phases={phases} events={events} />
-
-      <h2>Phases</h2>
 
       <Phases phases={phases} />
 
-      <h2>Events</h2>
-
-      <Events years={events} />
+      <Events events={events} />
 
       <Editor />
-
     </div>
   );
 }

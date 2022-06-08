@@ -7,16 +7,20 @@ const Events = ({ years }) => {
 
   const li = []
 
-  for(const year in years) {
+  for (const year in years) {
     const event = years[year]
 
-    li.push(<li data-year={year}><span style={{ color: event.color }}>&#x2B24;</span>{event.title}</li>)
+    li.push(<li><span style={{ color: event.color }}>&#x2B24;</span>{event.title}</li>)
   }
 
   return (
-    <ul className="phases" onClick={handleClick}>
-      {li}
-    </ul>
+    <>
+      <h2>Events</h2>
+
+      <ul className="phases" onClick={handleClick}>
+        {li}
+      </ul>
+    </>
   );
 }
 

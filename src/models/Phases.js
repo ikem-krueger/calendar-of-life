@@ -1,4 +1,4 @@
-const erikson =  [
+const eightStagesOfDevelopment =  [
   { color: "#D7091D", title: "Infancy", from: 1, to: 1 },
   { color: "#F76F20", title: "Toddler age", from: 2, to: 3 },
   { color: "#FFAF02", title: "Playing age", from: 3, to: 5 },
@@ -9,7 +9,7 @@ const erikson =  [
   { color: "#4F7193", title: "Mature adulthood", from: 65, to: 100 }
 ];
 
-const smv = [
+const smvTimeline = [
   { color: "#F8DC02", title: "Teen", from: 14, to: 18 },
   { color: "#FEB710", title: "Break", from: 18, to: 20 },
   { color: "#F67622", title: "Party Years", from: 20, to: 27 },
@@ -21,4 +21,4 @@ const smv = [
   { color: "#FCBA11", title: "Security", from: 48, to: 65 }
 ]
 
-export { erikson, smv };
+export { eightStagesOfDevelopment, smvTimeline };

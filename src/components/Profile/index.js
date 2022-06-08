@@ -10,6 +10,8 @@ const Profile = ({ profile }) => {
 
   return (
     <>
+      <h2>Profile</h2>
+
       <ul>
         <li>Name: {profile.name}</li>
         <li>Year of birth: {profile.birthYear}</li>

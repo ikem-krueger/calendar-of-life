@@ -8,31 +8,35 @@ const Blocks = ({ phases, events }) => {
   }
 
   return (
-    <div className="blocks" onClick={handleClick}>
-      {[...Array(100)].map(function (_, index) {
-        const years = Object.keys(events)
-        const year = index + 1
+    <>
+      <h2>Years</h2>
 
-        let block = <div title={"Age: " + year}></div>
-        let content
+      <div className="blocks" onClick={handleClick}>
+        {[...Array(100)].map(function (_, index) {
+          const years = Object.keys(events)
+          const year = index + 1
 
-        if (years.includes(year.toString()))
-          block = <div title={"Age: " + year}><span style={{ color: events[year].color}}>⬤</span></div>
+          let block = <div title={"Age: " + year}></div>
+          let content
 
-        phases.map((phase, index) => {
-          if (year >= phase.from && year <= phase.to) {
-            const phaseNumber = index + 1
+          if (years.includes(year.toString()))
+            block = <div title={"Age: " + year}><span>⬤</span></div>
 
-            if (years.includes(year.toString()))
-              content = <span style={{ color: events[year].color}}>⬤</span>
+          phases.map((phase, index) => {
+            if (year >= phase.from && year <= phase.to) {
+              const phaseNumber = index + 1
 
-            block = <div title={"Age: " + year + " (Phase " + phaseNumber + ": " + phase.title + ")"} style={{ border: "1px solid " + phase.color, color: phase.color }}>{content}</div>
-          }
-        })
+              if (years.includes(year.toString()))
+                content = <span>⬤</span>
 
-        return block
-      })}
-    </div>
+              block = <div title={"Age: " + year + " (Phase " + phaseNumber + ": " + phase.title + ")"} style={{ border: "1px solid " + phase.color, color: phase.color }}>{content}</div>
+            }
+          })
+
+          return block
+        })}
+      </div>
+    </>
   );
 }
 

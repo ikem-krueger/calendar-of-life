@@ -6,11 +6,15 @@ const Phases = ({ phases }) => {
   }
 
   return (
-    <ul className="phases" onClick={handleClick}>
-      {phases.map((phase) => {
-        return <li data-range={phase.from + "-" + phase.to}><span style={{ color: phase.color }}>&#x2B24;</span>{phase.title}</li>;
-      })}
-    </ul>
+    <>
+      <h2>Phases</h2>
+
+      <ul className="phases" onClick={handleClick}>
+        {phases.map((phase) => {
+          return <li><span style={{ color: phase.color }}>&#x2B24;</span>{phase.title}</li>;
+        })}
+      </ul>
+    </>
   );
 }
 
