@@ -7,35 +7,40 @@ const Blocks = ({ phases, events }) => {
     console.debug("Block clicked...");
   }
 
+  const years = Object.keys(events).map(Number)
+
   return (
     <>
       <h2>Years</h2>
 
-      <div className="blocks" onClick={handleClick}>
-        {[...Array(100)].map(function (_, index) {
-          const years = Object.keys(events)
-          const year = index + 1
+      <table onClick={handleClick}>
+        {[...Array(10)].map((_, i) => {
+          return (
+            <tr>
+              {[...Array(10)].map((_, j) => {
+                const year = (i * 10) + (j + 1)
 
-          let block = <div title={"Age: " + year}></div>
-          let content
+                let color = ""
 
-          if (years.includes(year.toString()))
-            block = <div title={"Age: " + year}><span>⬤</span></div>
+                phases.map((phase, index) => {
+                  if (year >= phase.from && year <= phase.to) {
+                    color = phase.color
+                  }
+                })
 
-          phases.map((phase, index) => {
-            if (year >= phase.from && year <= phase.to) {
-              const phaseNumber = index + 1
+                let content = ""
 
-              if (years.includes(year.toString()))
-                content = <span>⬤</span>
+                if (years.includes(year))
+                  content = "⬤"
 
-              block = <div title={"Age: " + year + " (Phase " + phaseNumber + ": " + phase.title + ")"} style={{ border: "1px solid " + phase.color, color: phase.color }}>{content}</div>
-            }
-          })
-
-          return block
+                return (
+                  <td title={"Age: " + year} style={color && { border: "1px solid " + color, color: color }}>{content}</td>
+                )
+              })}
+            </tr>
+          )
         })}
-      </div>
+      </table>
     </>
   );
 }

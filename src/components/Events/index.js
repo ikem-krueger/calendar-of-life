@@ -17,7 +17,7 @@ const Events = ({ events }) => {
     <>
       <h2>Events</h2>
 
-      <ul className="phases" onClick={handleClick}>
+      <ul className="events" onClick={handleClick}>
         {li}
       </ul>
     </>

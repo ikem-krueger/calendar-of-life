@@ -1,12 +1,12 @@
-.phases {
+.events {
   list-style: none;
 }
 
-.phases li {
+.events li {
   cursor: pointer;
   width: fit-content;
 }
 
-.phases span {
+.events span {
   padding-right: 5px;
 }
