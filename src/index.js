@@ -1,5 +1,6 @@
 import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
+import { useState } from 'react';
 
 import Profile from './components/Profile';
 import Blocks from "./components/Blocks";
@@ -26,12 +27,14 @@ const App = () => {
 
   const phases = eightStagesOfDevelopment
 
-  const events = {
+  const _events = {
     1: { color: "#D7091D", title: "Year of birth" },
     38: { color: "#2FBBCE", title: "Current age" },
     67: { color: "#4F7193", title: "Retirement age" },
     70: { color: "#4F7193", title: "Life expectancy" }
   }
+
+  const [events, updateEvents] = useState(_events)
 
   return (
     <div>
@@ -45,7 +48,7 @@ const App = () => {
 
       <Events events={events} />
 
-      <Editor />
+      <Editor updateEvents={updateEvents} events={events}/>
     </div>
   );
 }

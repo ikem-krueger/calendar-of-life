@@ -1,8 +1,10 @@
 import ColorPicker from "../ColorPicker";
 import "./style.css";
 
-const Editor = () => {
+const Editor = ({ events, updateEvents }) => {
   function handleClick(e) {
+    updateEvents({...events, 45: { color: "red", title: "Sex" }})
+
     console.debug("Button clicked...")
   }
 
