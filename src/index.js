@@ -15,32 +15,36 @@ const App = () => {
   const profile = {
     name: "Marco",
     birthYear: 1983,
-    residence: "Deutschland/Berlin",
+    residence: "Germany/Berlin",
     age: 38,
-    status: "Ledig",
-    children: "Keine"
+    status: "Single",
+    children: "0",
+    weight: 78,
+    height: 175,
+    sex: "male"
   }
 
-  const years = {
-    1: { color: "#D7091D", title: "Geburtsjahr" },
-    38: { color: "#2FBBCE", title: "Alter" },
-    67: { color: "#4F7193", title: "Renteneintrittsalter" },
-    70: { color: "#4F7193", title: "Lebenserwartung" }
-  }  
-  
-  const phases = smv
-  const bar = years
+  const events = {
+    1: { color: "#D7091D", title: "Year of birth" },
+    38: { color: "#2FBBCE", title: "Current age" },
+    67: { color: "#4F7193", title: "Retirement age" },
+    70: { color: "#4F7193", title: "Life expectancy" }
+  }
+
+  const phases = erikson
 
   return (
     <div>
 
       <h1>Calender of life</h1>
 
-      <Profile profile={profile}/>
+      <h2>Profile</h2>
+
+      <Profile profile={profile} />
 
       <h2>Years</h2>
 
-      <Blocks phases={phases} events={bar} />
+      <Blocks phases={phases} events={events} />
 
       <h2>Phases</h2>
 
@@ -48,7 +52,7 @@ const App = () => {
 
       <h2>Events</h2>
 
-      <Events years={bar} />
+      <Events years={events} />
 
       <Editor />
 

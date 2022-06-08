@@ -40,14 +40,17 @@ Phasen des Lebens:
 
 Ereignisse:
 
-- Geburt
+- Geister sehen
+- Tod von Krümel
 - Beinahe ertrunken im Schwimmunterricht
 - Scheidung
 - Tod der Mutter
-- Tod des Vaters
 
 Quellen:
 
+* https://www.tk.de/service/app/2002866/bmirechner/bmirechner.app
+* https://plakos-akademie.de/bmi-rechner/
+* https://therationalmale.com/2014/04/08/preventative-medicine-part-iii/
 * https://greator.com/erikson-stufenmodell/
 * https://karrierebibel.de/erikson-stufenmodell/
 * https://daryologia.wordpress.com/2015/01/06/erik-h-erikson-stuffenmodel-der-psychosozialen-entwicklung/
