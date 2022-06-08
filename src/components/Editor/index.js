@@ -2,25 +2,36 @@ import ColorPicker from "../ColorPicker";
 import "./style.css";
 
 const Editor = ({ events, updateEvents }) => {
-  function handleClick(e) {
-    updateEvents({...events, 45: { color: "red", title: "Sex" }})
+  function addUpdateEvent(e) {
+    const year = document.querySelector("#yearInput").value
+    const title = document.querySelector("#titleInput").value
 
-    console.debug("Button clicked...")
+    if (year && title) {
+      updateEvents({ ...events, [year]: { color: "red", title: title } })
+    }
+  }
+
+  function deleteEvent() {
+    const year = document.querySelector("#yearInput").value
+    let _
+
+    ({ [year]: _, ...events } = events);
+
+    updateEvents(events);
   }
 
   return (
     <div id="editSection">
       <ColorPicker />
 
-      <input id="titleInput" placeholder="Title"></input>
+      <input id="yearInput" placeholder="Year"></input>
 
-      <input id="rangeInput" placeholder="Range"></input>
+      <input id="titleInput" placeholder="Title"></input>
 
       <div className="btn-group">
 
-        <button id="addButton" onClick={handleClick}>Add</button>
-        <button id="updateButton" onClick={handleClick}>Update</button>
-        <button id="deleteButton" onClick={handleClick}>Delete</button>
+        <button id="addUpdateButton" onClick={addUpdateEvent}>Add</button>
+        <button id="deleteButton" onClick={deleteEvent}>Delete</button>
 
       </div>
 
