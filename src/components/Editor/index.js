@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ColorPicker from "../ColorPicker";
 import "./style.css";
 
@@ -7,7 +8,7 @@ const Editor = ({ events, updateEvents }) => {
     const title = document.querySelector("#titleInput").value
 
     if (year && title) {
-      updateEvents({ ...events, [year]: { color: "red", title: title } })
+      updateEvents({ ...events, [year]: { color: eventColor, title: title } })
     }
   }
 
@@ -20,9 +21,11 @@ const Editor = ({ events, updateEvents }) => {
     updateEvents(events);
   }
 
+  const [eventColor, setEventColor] = useState();
+
   return (
     <div id="editSection">
-      <ColorPicker />
+      <ColorPicker setEventColor={setEventColor} />
 
       <input id="yearInput" placeholder="Year"></input>
 

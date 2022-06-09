@@ -5,11 +5,15 @@ import "./style.css";
 
 const currentColorPalette = custom;
 
-const ColorPicker = ({ color }) => {
+const ColorPicker = ({ color, setEventColor }) => {
   const [selectedColor, setSelectedColor] = useState(color)
 
   function handleClick(e) {
-    setSelectedColor(e.target.style.color) // this is an rgb() value
+    const color = e.target.style.color // this is an rgb() value
+
+    setSelectedColor(color)
+
+    setEventColor(color)
   }
 
   return (
