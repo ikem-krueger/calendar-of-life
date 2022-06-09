@@ -22,9 +22,9 @@ let profile = {
   weight: 78,
   height: 175,
   sex: "male",
-  phases: eightStagesOfDevelopment,
+  phases: eightStagesOfDevelopment, // FIXME: Crashes if other phases are used
   events: {
-    1: "Year of birth",
+    1: "Year of birth", // TODO: Add logic for multiple events in one year
     38: "Current age",
     67: "Retirement age",
     70: "Life expectancy"
