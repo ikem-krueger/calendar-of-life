@@ -12,7 +12,7 @@ const Blocks = ({ phases, events }) => {
   let currentAge
 
   Object.keys(events).map((key) => {
-    if (events[key].event == "Current age")
+    if (events[key] == "Current age")
       currentAge = parseInt(key)
   })
 

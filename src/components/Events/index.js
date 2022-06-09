@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Events = ({ events }) => {
+const Events = ({ phases, events }) => {
   function handleClick(e) {
     console.debug("Event clicked...");
   }
@@ -10,9 +10,20 @@ const Events = ({ events }) => {
       <h2>Events</h2>
 
       <ul className="events" onClick={handleClick}>
-        {Object.values(events).map((event, i) => {
+        {Object.keys(events).map((age, i) => {
+          const event = events[age]
+
+          let color
+
+          phases.map((phase) => {
+            const { from, to } = phase
+
+            if(age >= from && age <= to)
+              color = phase.color
+          })
+
           return (
-            <li key={i}><span style={{ color: event.color }}>&#x2B24;</span>{event.event}</li>
+            <li key={i}><span style={ color && { color: color }}>&#x2B24;</span>{event}</li>
           )
         })}
       </ul>
