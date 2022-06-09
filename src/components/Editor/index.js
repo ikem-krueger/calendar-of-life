@@ -6,7 +6,7 @@ const Editor = ({ events, updateEvents }) => {
   function addUpdateEvent(e) {
     const target = e.target
 
-    if (target.id == "addUpdateButton" || target.id == "eventInput" && e.key == "Enter") {
+    if (target.id === "addUpdateButton" || (target.id === "eventInput" && e.key === "Enter")) {
       const age = document.querySelector("#ageInput").value // TODO: 
       const event = document.querySelector("#eventInput").value // TODO: 
 

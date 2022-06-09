@@ -12,7 +12,7 @@ const Blocks = ({ phases, events }) => {
   let currentAge
 
   Object.keys(events).map((key) => {
-    if (events[key] == "Current age")
+    if (events[key] === "Current age")
       currentAge = parseInt(key)
   })
 
@@ -41,7 +41,7 @@ const Blocks = ({ phases, events }) => {
                   if (years.includes(year))
                     content = "⬤"
 
-                  if (year == currentAge)
+                  if (year === currentAge)
                     color = "black"
 
                   return (
