@@ -60,13 +60,12 @@ function getWhoCategory(weight, height, sex, age) {
   const bmi = calculateBmi(weight, height)
   const weightCategory = getWeightCategory(age, sex)
 
+  // normal weight
   const min = roundToPlaces(weightCategory[0] * (height * height), 2)
-  const middle = roundToPlaces(weightCategory[1] * (height * height), 2)
   const max = roundToPlaces(weightCategory[2] * (height * height), 2)
 
-  console.log(`The normal weight is: ${min}-${max} kg`)
-
-  console.log(`The ideal weight is: ${middle} kg`)
+  // ideal weight
+  const middle = roundToPlaces(weightCategory[1] * (height * height), 2)
 
   let whoCategory = ""
 

@@ -24,10 +24,10 @@ let profile = {
   sex: "male",
   phases: eightStagesOfDevelopment,
   events: {
-    1: { color: "#D7091D", title: "Year of birth" },
-    38: { color: "#2FBBCE", title: "Current age" },
-    67: { color: "#4F7193", title: "Retirement age" },
-    70: { color: "#4F7193", title: "Life expectancy" }
+    1: { color: "#D7091D", event: "Year of birth" },
+    38: { color: "#2FBBCE", event: "Current age" },
+    67: { color: "#4F7193", event: "Retirement age" },
+    70: { color: "#4F7193", event: "Life expectancy" }
   }
 }
 

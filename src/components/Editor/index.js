@@ -4,19 +4,19 @@ import "./style.css";
 
 const Editor = ({ events, updateEvents }) => {
   function addUpdateEvent(e) {
-    const year = document.querySelector("#yearInput").value
-    const title = document.querySelector("#titleInput").value
+    const age = document.querySelector("#ageInput").value
+    const event = document.querySelector("#eventInput").value
 
-    if (year && title) {
-      updateEvents({ ...events, [year]: { color: eventColor, title: title } })
+    if (age && event) {
+      updateEvents({ ...events, [age]: { color: eventColor, event: event } })
     }
   }
 
   function deleteEvent() {
-    const year = document.querySelector("#yearInput").value
+    const age = document.querySelector("#ageInput").value
     let _
 
-    ({ [year]: _, ...events } = events);
+    ({ [age]: _, ...events } = events);
 
     updateEvents(events);
   }
@@ -27,9 +27,9 @@ const Editor = ({ events, updateEvents }) => {
     <div id="editSection">
       <ColorPicker setEventColor={setEventColor} />
 
-      <input id="yearInput" placeholder="Year"></input>
+      <input id="ageInput" placeholder="Age"></input>
 
-      <input id="titleInput" placeholder="Title"></input>
+      <input id="eventInput" placeholder="Event"></input>
 
       <div className="btn-group">
 

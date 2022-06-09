@@ -12,7 +12,7 @@ const Events = ({ events }) => {
       <ul className="events" onClick={handleClick}>
         {Object.values(events).map((event, i) => {
           return (
-            <li key={i}><span style={{ color: event.color }}>&#x2B24;</span>{event.title}</li>
+            <li key={i}><span style={{ color: event.color }}>&#x2B24;</span>{event.event}</li>
           )
         })}
       </ul>

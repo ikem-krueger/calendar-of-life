@@ -6,3 +6,8 @@ td {
   font-size: 10px;
   text-align: center;
 }
+
+td:hover {
+	border: 1px solid black !important;
+	color: black !important;
+}
