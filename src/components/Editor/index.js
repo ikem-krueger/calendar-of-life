@@ -4,11 +4,14 @@ import "./style.css";
 
 const Editor = ({ events, updateEvents }) => {
   function addUpdateEvent(e) {
-    const age = document.querySelector("#ageInput").value
-    const event = document.querySelector("#eventInput").value
+    const target = e.target
 
-    if (age && event) {
-      updateEvents({ ...events, [age]: { color: eventColor, event: event } })
+    if (target.id == "addUpdateButton" || target.id == "eventInput" && e.key == "Enter") {
+      const age = document.querySelector("#ageInput").value // TODO: 
+      const event = document.querySelector("#eventInput").value // TODO: 
+
+      if (age && event)
+        updateEvents({ ...events, [age]: event })
     }
   }
 
@@ -29,7 +32,7 @@ const Editor = ({ events, updateEvents }) => {
 
       <input id="ageInput" placeholder="Age"></input>
 
-      <input id="eventInput" placeholder="Event"></input>
+      <input id="eventInput" placeholder="Event" onKeyDown={addUpdateEvent}></input>
 
       <div className="btn-group">
 

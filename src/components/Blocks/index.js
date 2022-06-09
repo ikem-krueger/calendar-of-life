@@ -22,17 +22,17 @@ const Blocks = ({ phases, events }) => {
 
       <table onClick={handleClick}>
         <tbody>
-          {[...Array(10)].map((_, i) => {
+          {[...Array(10)].map((column, i) => {
             return (
               <tr key={i}>
-                {[...Array(10)].map((_, j) => {
+                {[...Array(10)].map((row, j) => {
                   const year = (i * 10) + (j + 1)
 
                   let color = ""
 
-                  phases.map((phase) => {
-                    if (year >= phase.from && year <= phase.to) {
-                      color = phase.color
+                  phases.map((currentPhase) => {
+                    if (year >= currentPhase.from && year <= currentPhase.to) {
+                      color = currentPhase.color
                     }
                   })
 

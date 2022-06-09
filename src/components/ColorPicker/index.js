@@ -12,8 +12,6 @@ const ColorPicker = ({ color, setEventColor }) => {
     const color = e.target.style.color // this is an rgb() value
 
     setSelectedColor(color)
-
-    setEventColor(color)
   }
 
   return (

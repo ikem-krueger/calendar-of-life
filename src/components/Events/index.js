@@ -11,19 +11,19 @@ const Events = ({ phases, events }) => {
 
       <ul className="events" onClick={handleClick}>
         {Object.keys(events).map((age, i) => {
-          const event = events[age]
+          const currentEvent = events[age]
 
-          let color
+          let color = ""
 
-          phases.map((phase) => {
-            const { from, to } = phase
+          phases.map((currentPhase) => {
+            const { from, to } = currentPhase
 
             if(age >= from && age <= to)
-              color = phase.color
+              color = currentPhase.color
           })
 
           return (
-            <li key={i}><span style={ color && { color: color }}>&#x2B24;</span>{event}</li>
+            <li key={i}><span style={ color && { color: color }}>&#x2B24;</span>{currentEvent}</li>
           )
         })}
       </ul>
