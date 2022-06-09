@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { useState } from 'react';
-
-import Profile from './components/Profile';
 import Blocks from "./components/Blocks";
-import Phases from "./components/Phases";
-import Events from './components/Events';
 import Editor from "./components/Editor";
-
+import Events from './components/Events';
+import Phases from "./components/Phases";
+import Profile from './components/Profile';
+import { eightStagesOfDevelopment } from './models/Phases';
 import "./style.css";
-
-import { eightStagesOfDevelopment, smvTimeline } from './models/Phases'
 
 let profile = {
   name: "Marco",
