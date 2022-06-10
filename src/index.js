@@ -28,6 +28,8 @@ let profile = {
 }
 
 const App = () => {
+  const [ selectedBlock, setSelectedBlock ] = useState(profile.age)
+
   const [events, updateEvents] = useState(profile.events)
 
   return (
@@ -36,7 +38,7 @@ const App = () => {
 
       <Profile profile={profile} />
 
-      <Blocks phases={profile.phases} events={events} />
+      <Blocks phases={profile.phases} events={events} selectedBlock={selectedBlock} setSelectedBlock={setSelectedBlock}/>
 
       <Phases phases={profile.phases} />
 

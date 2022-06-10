@@ -1,20 +1,18 @@
 import "./style.css";
 
-const Blocks = ({ phases, events }) => {
+const Blocks = ({ phases, events, selectedBlock, setSelectedBlock }) => {
   function handleClick(e) {
     const block = e.target
 
-    console.debug("Block clicked...");
+    const i = parseInt(block.parentNode.rowIndex)
+    const j = parseInt(block.cellIndex)
+
+    const year = (i * 10) + (j + 1)
+
+    setSelectedBlock(year);
   }
 
   const years = Object.keys(events).map(Number)
-
-  let currentAge
-
-  Object.keys(events).map((key) => {
-    if (events[key] === "Current age")
-      currentAge = parseInt(key)
-  })
 
   return (
     <>
@@ -41,7 +39,7 @@ const Blocks = ({ phases, events }) => {
                   if (years.includes(year))
                     content = "⬤"
 
-                  if (year === currentAge)
+                  if (year === selectedBlock)
                     color = "black"
 
                   return (
