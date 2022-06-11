@@ -1,8 +1,4 @@
 .events {
-  list-style: none;
-}
-
-.events li {
   cursor: pointer;
   width: fit-content;
 }

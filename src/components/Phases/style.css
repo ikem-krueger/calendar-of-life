@@ -1,8 +1,4 @@
 .phases {
-  list-style: none;
-}
-
-.phases li {
   cursor: pointer;
   width: fit-content;
 }

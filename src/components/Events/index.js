@@ -9,7 +9,7 @@ const Events = ({ phases, events }) => {
     <>
       <h2>Events</h2>
 
-      <ul className="events" onClick={handleClick}>
+      <dl className="events" onClick={handleClick}>
         {Object.keys(events).map((age, i) => {
           const currentEvent = events[age]
 
@@ -23,10 +23,10 @@ const Events = ({ phases, events }) => {
           })
 
           return (
-            <li key={i}><span style={ color && { color: color }}>&#x2B24;</span>{currentEvent}</li>
+            <dd key={i}><span style={ color && { color: color }}>&#x2B24;</span>{currentEvent}</dd>
           )
         })}
-      </ul>
+      </dl>
     </>
   );
 }

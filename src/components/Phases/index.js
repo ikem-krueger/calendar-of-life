@@ -9,11 +9,11 @@ const Phases = ({ phases }) => {
     <>
       <h2>Phases</h2>
 
-      <ul className="phases" onClick={handleClick}>
+      <dl className="phases" onClick={handleClick}>
         {phases.map((currentPhase, i) => {
-          return <li key={i}><span style={{ color: currentPhase.color }}>&#x2B24;</span>{currentPhase.phase}</li>;
+          return <dd key={i}><span style={{ color: currentPhase.color }}>&#x2B24;</span>{currentPhase.phase}</dd>;
         })}
-      </ul>
+      </dl>
     </>
   );
 }

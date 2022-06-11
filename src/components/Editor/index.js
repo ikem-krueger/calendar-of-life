@@ -2,7 +2,7 @@ import { useState } from "react";
 import ColorPicker from "../ColorPicker";
 import "./style.css";
 
-const Editor = ({ events, updateEvents }) => {
+const Editor = ({ events, updateEvents, selectedBlock }) => {
   function addUpdateEvent(e) {
     const target = e.target
 
@@ -25,12 +25,12 @@ const Editor = ({ events, updateEvents }) => {
   }
 
   const [eventColor, setEventColor] = useState();
-
+  
   return (
     <div id="editSection">
       <ColorPicker setEventColor={setEventColor} />
 
-      <input id="ageInput" placeholder="Age"></input>
+      <input id="ageInput" placeholder="Age" value={selectedBlock}></input>
 
       <input id="eventInput" placeholder="Event" onKeyDown={addUpdateEvent}></input>
 
