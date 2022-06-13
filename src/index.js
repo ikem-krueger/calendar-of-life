@@ -1,34 +1,16 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Blocks from "./components/Blocks";
-import Editor from "./components/Editor";
-import Events from './components/Events';
+import Calendar from "./components/Calendar";
 import Phases from "./components/Phases";
-import Profile from './components/Profile';
-import { eightStagesOfDevelopment } from './models/Phases';
+import Events from './components/Events';
 import "./style.css";
 
-let profile = {
-  name: "Marco",
-  birthYear: 1983,
-  residence: "Germany/Berlin",
-  age: 38,
-  status: "Single",
-  children: "0",
-  weight: 78,
-  height: 175,
-  sex: "male",
-  phases: eightStagesOfDevelopment, // FIXME: Crashes if other phases are used
-  events: {
-    1: "Year of birth", // TODO: Add logic for multiple events in one year
-    38: "Current age",
-    67: "Retirement age",
-    70: "Life expectancy"
-  }
+const profile = {
+  phases: [ { from: 1, to: 12, phase: "Childhood" }, ],
+  events: { 1: "Birth", 38: "Now" }
 }
 
 const App = () => {
-  const [selectedBlock, setSelectedBlock] = useState(profile.age)
   const [phases, updatePhases] = useState(profile.phases)
   const [events, updateEvents] = useState(profile.events)
 
@@ -36,15 +18,17 @@ const App = () => {
     <div>
       <h1>Calender of life</h1>
 
-      <Profile profile={profile} />
+      <h2>Years</h2>
 
-      <Blocks phases={phases} events={events} selectedBlock={selectedBlock} setSelectedBlock={setSelectedBlock} />
+      <Calendar phases={phases} events={events} />
+
+      <h2>Phases</h2>
 
       <Phases phases={phases} />
 
-      <Events phases={phases} events={events} />
+      <h2>Events</h2>
 
-      <Editor events={events} updateEvents={updateEvents} selectedBlock={selectedBlock} />
+      <Events events={events} />
     </div>
   );
 }
