@@ -1,6 +1,6 @@
-const Event = ({ event }) => {
+const Event = ({ event, className }) => {
   return (
-    <dd>{event}</dd>
+    <dd><span className={className}></span>{event}</dd>
   )
 }
 

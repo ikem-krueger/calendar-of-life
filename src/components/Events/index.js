@@ -1,12 +1,23 @@
 import "./style.css";
 import Event from "../Event";
 
-const Events = ({ events }) => {
+const Events = ({ phases, events }) => {
   return (
     <dl>
-      {Object.values(events).map((event, i) => {
+      {Object.keys(events).map((key, i) => {
+        const event = events[key]
+
+        const year = key
+
+        let className
+
+        phases.map((phase, i) => {
+          if (year >= phase.from && year <= phase.to)
+            className = "phase-" + (i + 1)
+        })
+
         return (
-          <Event event={event} />
+          <Event event={event} className={className}/>
         )
       })}
     </dl>

@@ -13,9 +13,17 @@ const Calendar = ({ phases, events }) => {
               {[...Array(10)].map((row, j) => {
                 const year = (i * 10) + (j + 1)
 
-                return (
-                  <Year year={year} content="" />
-                )
+                let className
+                
+                phases.map((phase, i) => {
+                  if(year >= phase.from && year <= phase.to)
+                    className = "phase-" + (i + 1)
+                })
+
+                if (years.includes(year))
+                  className += " event"
+
+                return <Year year={year} className={className} />
               })}
             </tr>
           )

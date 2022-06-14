@@ -5,8 +5,10 @@ const Phases = ({ phases }) => {
   return (
     <dl>
       {phases.map((phase, i) => {
+        const className = "phase-" + (i + 1)
+
         return (
-          <Phase phase={phase.phase} />
+          <Phase phase={phase.phase} className={className}/>
         )
       })}
     </dl>

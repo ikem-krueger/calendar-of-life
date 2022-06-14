@@ -1,6 +1,6 @@
-const Year = ({ year, color, content }) => {
+const Year = ({ year, className }) => {
   return (
-    <td title={"Age: " + year}>{content}</td>
+    <td title={"Age: " + year} className={className}></td>
   )
 }
 

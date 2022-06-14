@@ -7,3 +7,60 @@ body {
   font-size: 12px;
   font-family: Verdana;
 }
+
+.phase-1 {
+  color: rgb(215, 9, 29);
+  border: 1px solid rgb(215, 9, 29);
+}
+
+.phase-2 {
+  color: rgb(247, 111, 32);
+  border: 1px solid rgb(247, 111, 32);
+}
+
+.phase-3 {
+  color: rgb(255, 175, 2);
+  border: 1px solid rgb(255, 175, 2);
+}
+
+.phase-4 {
+  color: rgb(86, 188, 126);
+  border: 1px solid rgb(86, 188, 126);
+}
+
+.phase-5 {
+  color: rgb(54, 152, 219);
+  border: 1px solid rgb(54, 152, 219);
+}
+
+.phase-6 {
+  color: rgb(47, 187, 206);
+  border: 1px solid rgb(47, 187, 206);
+}
+
+.phase-7 {
+  color: rgb(170, 146, 206);
+  border: 1px solid rgb(170, 146, 206);
+}
+
+.phase-8 {
+  color: rgb(79, 113, 147);
+  border: 1px solid rgb(79, 113, 147);
+}
+
+.event::after {
+  content: "⬤";
+}
+
+dd {
+  cursor: pointer;
+}
+
+dd span {
+  padding-right: 4px;
+  border: none !important;
+}
+
+dd span::after {
+  content: "⬤";
+}

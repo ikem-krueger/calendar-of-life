@@ -6,8 +6,22 @@ import Events from './components/Events';
 import "./style.css";
 
 const profile = {
-  phases: [ { from: 1, to: 12, phase: "Childhood" }, ],
-  events: { 1: "Birth", 38: "Now" }
+  phases: [
+    {"from":1, "to":1, "phase":"Infancy"},
+    {"from":2, "to":3, "phase":"Toddler age"},
+    {"from":3, "to":5, "phase":"Playing age"},
+    {"from":6, "to":11, "phase":"School age"},
+    {"from":12, "to":18, "phase":"Adolescence"},
+    {"from":19, "to":40, "phase":"Early adulthood"},
+    {"from":40, "to":65, "phase":"Adulthood"},
+    {"from":65, "to":100, "phase":"Mature adulthood"},
+  ],
+  events: {
+    1: "Year of birth",
+    38: "Current age",
+    67: "Retirement age",
+    70: "Life expectancy"
+  }
 }
 
 const App = () => {
@@ -28,7 +42,7 @@ const App = () => {
 
       <h2>Events</h2>
 
-      <Events events={events} />
+      <Events phases={phases} events={events} />
     </div>
   );
 }
