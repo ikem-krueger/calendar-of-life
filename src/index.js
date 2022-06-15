@@ -4,7 +4,6 @@ import Calendar from "./components/Calendar";
 import Phases from "./components/Phases";
 import Events from './components/Events';
 import "./style.css";
-import Editor from './components/Editor';
 
 const profile = {
   phases: [
@@ -18,20 +17,17 @@ const profile = {
     { "from": 65, "to": 100, "name": "Mature adulthood" },
   ],
   events: {
-    1: "Year of birth",
-    38: "Current age",
-    67: "Retirement age",
-    70: "Life expectancy"
+    1: "Year of birth"
   }
 }
 
 const App = () => {
   const [phases, setPhases] = useState(profile.phases)
   const [events, setEvents] = useState(profile.events)
-  const [range, setRange] = useState("1-1")
-  const [name, setName] = useState("Infancy")
+  const [range, setRange] = useState()
+  const [name, setName] = useState()
 
-  function editPhase(phaseNumber) { // TODO: refactor function name
+  function editPhase(phaseNumber) {
     const phase = phases[phaseNumber - 1]
 
     if (phase) {
@@ -52,11 +48,23 @@ const App = () => {
 
       <h2>Phases</h2>
 
-      <Editor range={range} name={name} />
+      <form>
+        <label for="range">Range:</label><br />
+        <input type="text" id="range" placeholder="1-100" value={range} /><br />
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" placeholder="Name of the phase" value={name} /><br />
+      </form>
 
-      <Phases phases={phases} editPhase={editPhase} />
+      <Phases phases={phases} />
 
       <h2>Events</h2>
+
+      <form>
+        <label for="year">Year:</label><br />
+        <input type="text" id="year" placeholder="1-100" value="" /><br />
+        <label for="event">Event:</label><br />
+        <input type="text" id="event" placeholder="Event that happened" value="" /><br />
+      </form>
 
       <Events phases={phases} events={events} />
     </div>

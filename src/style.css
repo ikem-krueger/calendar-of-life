@@ -52,6 +52,15 @@ body {
   content: "⬤";
 }
 
+form {
+  margin-left: 20px;
+}
+
+form input {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
 dd span {
   padding-right: 4px;
   border: none !important;
