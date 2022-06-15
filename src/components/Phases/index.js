@@ -8,7 +8,7 @@ const Phases = ({ phases }) => {
         const className = "phase-" + (i + 1)
 
         return (
-          <Phase phase={phase.name} className={className}/>
+          <Phase name={phase.name} className={className}/>
         )
       })}
     </dl>

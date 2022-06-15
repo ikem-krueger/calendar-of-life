@@ -1,6 +1,6 @@
-const Phase = ({ phase, className }) => {
+const Phase = ({ name, className }) => {
   return (
-    <dd><span className={className}></span>{phase}</dd>
+    <dd><span className={className}></span>{name}</dd>
   )
 }
 
