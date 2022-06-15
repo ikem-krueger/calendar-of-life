@@ -1,8 +1,10 @@
+import "./style.css";
+
 const Year = ({ year, phaseNumber, className, editPhase }) => {
   function onClickHandler(e) {
     const phaseNumber = e.target.dataset.phaseNumber
 
-    editPhase(phaseNumber)
+    editPhase(phaseNumber, year)
   }
 
   if (phaseNumber)

@@ -1,7 +1,6 @@
-import "./style.css";
 import { Year } from "../Year";
 
-const Calendar = ({ phases, events, editPhase }) => {
+const Calendar = ({ phases, events, selectedYear, editPhase }) => {
   const years = Object.keys(events).map(Number)
 
   return (
@@ -21,6 +20,9 @@ const Calendar = ({ phases, events, editPhase }) => {
                 })
 
                 let className = ""
+
+                if(year == selectedYear)
+                  className += "selectedYear "
 
                 if (years.includes(year))
                   className += "event"

@@ -7,7 +7,8 @@ td {
   text-align: center;
 }
 
-td:hover {
+td:hover,
+.selectedYear {
 	border: 1px solid black !important;
 	color: black !important;
 }
