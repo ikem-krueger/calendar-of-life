@@ -1,14 +1,15 @@
 import "./style.css";
 import Phase from "../Phase";
 
-const Phases = ({ phases }) => {
+const Phases = ({ phases, editPhase }) => {
   return (
     <dl>
       {phases.map((phase, i) => {
-        const className = "phase-" + (i + 1)
+        const phaseNumber = (i + 1)
+        const className = "phase-" + phaseNumber
 
         return (
-          <Phase name={phase.name} className={className}/>
+          <Phase phaseNumber={phaseNumber} name={phase.name} className={className} editPhase={editPhase} />
         )
       })}
     </dl>

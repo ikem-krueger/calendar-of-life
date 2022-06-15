@@ -1,6 +1,14 @@
-const Phase = ({ name, className }) => {
+const Phase = ({ phaseNumber, name, className, editPhase }) => {
+  function onClickHandler(e) {
+    const phaseNumber = e.target.dataset.phaseNumber
+
+    console.debug(e.target.dataset)
+
+    editPhase(phaseNumber)
+  }
+
   return (
-    <dd><span className={className}></span>{name}</dd>
+    <dd data-phase-number={phaseNumber} phaseNumber onClick={onClickHandler}><span className={className}></span>{name}</dd>
   )
 }
 

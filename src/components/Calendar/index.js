@@ -1,17 +1,17 @@
 import "./style.css";
 import { Year } from "../Year";
 
-const Calendar = ({ phases, events, foo }) => {
+const Calendar = ({ phases, events, editPhase }) => {
   const years = Object.keys(events).map(Number)
 
   return (
     <table>
       <tbody>
-        {[...Array(10)].map((column, i) => {
+        {[...Array(10)].map((_, columnNumber) => {
           return (
             <tr>
-              {[...Array(10)].map((row, j) => {
-                const year = (i * 10) + (j + 1)
+              {[...Array(10)].map((_, rowNumber) => {
+                const year = (columnNumber * 10) + (rowNumber + 1)
 
                 let phaseNumber
 
@@ -25,7 +25,7 @@ const Calendar = ({ phases, events, foo }) => {
                 if (years.includes(year))
                   className += "event"
 
-                return <Year year={year} phaseNumber={phaseNumber} className={className} foo={foo} />
+                return <Year phaseNumber={phaseNumber} year={year} className={className} editPhase={editPhase} />
               })}
             </tr>
           )

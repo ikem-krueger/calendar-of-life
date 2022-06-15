@@ -31,7 +31,7 @@ const App = () => {
   const [range, setRange] = useState("1-1")
   const [name, setName] = useState("Infancy")
 
-  function foo(phaseNumber) { // TODO: refactor function name
+  function editPhase(phaseNumber) { // TODO: refactor function name
     const phase = phases[phaseNumber - 1]
 
     if (phase) {
@@ -48,17 +48,17 @@ const App = () => {
 
       <h2>Years</h2>
 
-      <Calendar phases={phases} events={events} foo={foo} />
+      <Calendar phases={phases} events={events} editPhase={editPhase} />
 
       <h2>Phases</h2>
 
-      <Phases phases={phases} />
+      <Editor range={range} name={name} />
+
+      <Phases phases={phases} editPhase={editPhase} />
 
       <h2>Events</h2>
 
       <Events phases={phases} events={events} />
-
-      <Editor range={range} name={name} />
     </div>
   );
 }

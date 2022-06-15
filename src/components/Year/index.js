@@ -1,8 +1,8 @@
-const Year = ({ year, phaseNumber, className, foo }) => {
+const Year = ({ year, phaseNumber, className, editPhase }) => {
   function onClickHandler(e) {
     const phaseNumber = e.target.dataset.phaseNumber
 
-    foo(phaseNumber)
+    editPhase(phaseNumber)
   }
 
   if (phaseNumber)
