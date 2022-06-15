@@ -1,7 +1,7 @@
 import "./style.css";
 import Phase from "../Phase";
 
-const Phases = ({ phases, editPhase }) => {
+const Phases = ({ phases }) => {
   return (
     <dl>
       {phases.map((phase, i) => {
@@ -9,7 +9,7 @@ const Phases = ({ phases, editPhase }) => {
         const className = "phase-" + phaseNumber
 
         return (
-          <Phase phaseNumber={phaseNumber} name={phase.name} className={className} editPhase={editPhase} />
+          <Phase name={phase.name} className={className} />
         )
       })}
     </dl>
