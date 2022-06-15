@@ -1,15 +1,15 @@
-const Year = ({ year, phase, className, foo }) => {
+const Year = ({ year, phaseNumber, className, foo }) => {
   function onClickHandler(e) {
-    const phase = e.target.dataset.phase
+    const phaseNumber = e.target.dataset.phaseNumber
 
-    foo(phase)
+    foo(phaseNumber)
   }
 
-  if (phase)
-    className += " phase-" + phase
+  if (phaseNumber)
+    className += " phase-" + phaseNumber
 
   return (
-    <td data-phase={phase} title={"Age: " + year} className={className} onClick={onClickHandler}></td>
+    <td data-phase-number={phaseNumber} title={"Age: " + year} className={className} onClick={onClickHandler}></td>
   )
 }
 
