@@ -19,15 +19,18 @@ const Calendar = ({ phases, events, selectedYear, editPhase }) => {
                     phaseNumber = (i + 1)
                 })
 
-                let className = ""
+                let className = []
 
-                if(year == selectedYear)
-                  className += "selectedYear "
+                if (phaseNumber)
+                  className.push("phase-" + phaseNumber)
 
                 if (years.includes(year))
-                  className += "event"
+                  className.push("event")
 
-                return <Year phaseNumber={phaseNumber} year={year} className={className} editPhase={editPhase} />
+                if (year == selectedYear)
+                  className.push("selectedYear")
+
+                return <Year phaseNumber={phaseNumber} year={year} className={className.join(" ")} editPhase={editPhase} />
               })}
             </tr>
           )
