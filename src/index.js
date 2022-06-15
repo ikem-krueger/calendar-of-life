@@ -24,12 +24,19 @@ const profile = {
 const App = () => {
   const [phases, setPhases] = useState(profile.phases)
   const [events, setEvents] = useState(profile.events)
+  
+  const [selectedYear, setSelectedYear] = useState()
+
   const [range, setRange] = useState()
   const [name, setName] = useState()
-  const [year, setYear] = useState()
+  const [age, setAge] = useState()
+  const [event, setEvent] = useState()
 
-  function editPhase(phaseNumber, year) {
+  function editPhase(phaseNumber, selectedYear) {
     const phase = phases[phaseNumber - 1]
+    const event = events[selectedYear]
+
+    setSelectedYear(selectedYear)
 
     if (phase) {
       const { from, to, name } = phase
@@ -38,7 +45,8 @@ const App = () => {
       setName(name)
     }
 
-    setYear(year)
+    setAge(selectedYear)
+    setEvent(event ? event : "")
   }
 
   return (
@@ -47,7 +55,7 @@ const App = () => {
 
       <h2>Years</h2>
 
-      <Calendar phases={phases} events={events} selectedYear={year} editPhase={editPhase} />
+      <Calendar phases={phases} events={events} selectedYear={selectedYear} editPhase={editPhase} />
 
       <h2>Phases</h2>
 
@@ -63,10 +71,10 @@ const App = () => {
       <h2>Events</h2>
 
       <form>
-        <label for="year">Year:</label><br />
-        <input type="text" id="year" placeholder="1-100" value="" /><br />
+        <label for="year">Age:</label><br />
+        <input type="text" id="age" placeholder="1-100" value={age} /><br />
         <label for="event">Event:</label><br />
-        <input type="text" id="event" placeholder="Event that happened" value="" /><br />
+        <input type="text" id="event" placeholder="Event that happened" value={event} /><br />
       </form>
 
       <Events phases={phases} events={events} />
