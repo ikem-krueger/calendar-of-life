@@ -1,7 +1,7 @@
 import "./style.css";
 import { Year } from "../Year";
 
-const Calendar = ({ phases, events }) => {
+const Calendar = ({ phases, events, foo }) => {
   const years = Object.keys(events).map(Number)
 
   return (
@@ -13,17 +13,19 @@ const Calendar = ({ phases, events }) => {
               {[...Array(10)].map((row, j) => {
                 const year = (i * 10) + (j + 1)
 
-                let className
-                
-                phases.map((phase, i) => {
-                  if(year >= phase.from && year <= phase.to)
-                    className = "phase-" + (i + 1)
+                let phase
+
+                phases.map((currentPhase, i) => {
+                  if (year >= currentPhase.from && year <= currentPhase.to)
+                    phase = (i + 1)
                 })
 
-                if (years.includes(year))
-                  className += " event"
+                let className = ""
 
-                return <Year year={year} className={className} />
+                if (years.includes(year))
+                  className += "event"
+
+                return <Year year={year} phase={phase} className={className} foo={foo} />
               })}
             </tr>
           )

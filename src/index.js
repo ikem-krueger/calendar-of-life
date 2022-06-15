@@ -4,17 +4,18 @@ import Calendar from "./components/Calendar";
 import Phases from "./components/Phases";
 import Events from './components/Events';
 import "./style.css";
+import Editor from './components/Editor';
 
 const profile = {
   phases: [
-    {"from":1, "to":1, "phase":"Infancy"},
-    {"from":2, "to":3, "phase":"Toddler age"},
-    {"from":3, "to":5, "phase":"Playing age"},
-    {"from":6, "to":11, "phase":"School age"},
-    {"from":12, "to":18, "phase":"Adolescence"},
-    {"from":19, "to":40, "phase":"Early adulthood"},
-    {"from":40, "to":65, "phase":"Adulthood"},
-    {"from":65, "to":100, "phase":"Mature adulthood"},
+    { "from": 1, "to": 1, "name": "Infancy" },
+    { "from": 2, "to": 3, "name": "Toddler age" },
+    { "from": 3, "to": 5, "name": "Playing age" },
+    { "from": 6, "to": 11, "name": "School age" },
+    { "from": 12, "to": 18, "name": "Adolescence" },
+    { "from": 19, "to": 40, "name": "Early adulthood" },
+    { "from": 40, "to": 65, "name": "Adulthood" },
+    { "from": 65, "to": 100, "name": "Mature adulthood" },
   ],
   events: {
     1: "Year of birth",
@@ -25,8 +26,21 @@ const profile = {
 }
 
 const App = () => {
-  const [phases, updatePhases] = useState(profile.phases)
-  const [events, updateEvents] = useState(profile.events)
+  const [phases, setPhases] = useState(profile.phases)
+  const [events, setEvents] = useState(profile.events)
+  const [range, setRange] = useState("1-1")
+  const [name, setName] = useState("Infancy")
+
+  function foo(phaseNumber) { // TODO: refactor function name
+    const phase = phases[phaseNumber - 1]
+
+    if (phase) {
+      const { from, to, name } = phase
+
+      setRange(`${from}-${to}`)
+      setName(name)
+    }
+  }
 
   return (
     <div>
@@ -34,7 +48,7 @@ const App = () => {
 
       <h2>Years</h2>
 
-      <Calendar phases={phases} events={events} />
+      <Calendar phases={phases} events={events} foo={foo} />
 
       <h2>Phases</h2>
 
@@ -43,6 +57,8 @@ const App = () => {
       <h2>Events</h2>
 
       <Events phases={phases} events={events} />
+
+      <Editor range={range} name={name} />
     </div>
   );
 }
