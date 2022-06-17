@@ -30,7 +30,7 @@ const Calendar = ({ phases, events, selectedYear, editPhase }) => {
                 if (year == selectedYear)
                   className.push("selectedYear")
 
-                return <Year key={rowNumber} phaseNumber={phaseNumber} year={year} className={className.join(" ")} updatePhaseEvent={updatePhaseEvent} />
+                return <Year key={rowNumber} phaseNumber={phaseNumber} year={year} className={className.join(" ")} editPhase={editPhase} />
               })}
             </tr>
           )
