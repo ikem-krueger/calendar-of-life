@@ -8,7 +8,7 @@ const Calendar = ({ phases, events, selectedYear, editPhase }) => {
       <tbody>
         {[...Array(10)].map((_, columnNumber) => {
           return (
-            <tr>
+            <tr key={columnNumber}>
               {[...Array(10)].map((_, rowNumber) => {
                 const year = (columnNumber * 10) + (rowNumber + 1)
 
@@ -30,7 +30,7 @@ const Calendar = ({ phases, events, selectedYear, editPhase }) => {
                 if (year == selectedYear)
                   className.push("selectedYear")
 
-                return <Year phaseNumber={phaseNumber} year={year} className={className.join(" ")} editPhase={editPhase} />
+                return <Year key={rowNumber} phaseNumber={phaseNumber} year={year} className={className.join(" ")} updatePhaseEvent={updatePhaseEvent} />
               })}
             </tr>
           )

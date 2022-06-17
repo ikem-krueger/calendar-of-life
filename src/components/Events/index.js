@@ -17,7 +17,7 @@ const Events = ({ phases, events }) => {
         })
 
         return (
-          <Event event={event} className={className}/>
+          <Event key={i} event={event} className={className}/>
         )
       })}
     </dl>
