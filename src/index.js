@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Calendar from "./components/Calendar";
 import Phases from "./components/Phases";
 import Events from './components/Events';
+import Input from './components/Input';
 import "./style.css";
 
 const profile = {
@@ -60,10 +61,9 @@ const App = () => {
       <h2>Phases</h2>
 
       <form>
-        <label for="range">Range:</label><br />
-        <input type="text" id="range" placeholder="1-100" value={range} /><br />
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" placeholder="Name of the phase" value={name} /><br />
+        <Input label="Range:" placeholder="1-100" value={range} id="range" />
+
+        <Input label="Name:" placeholder="Name of the phase" value={name} id="name" />
       </form>
 
       <Phases phases={phases} />
@@ -71,10 +71,9 @@ const App = () => {
       <h2>Events</h2>
 
       <form>
-        <label for="year">Age:</label><br />
-        <input type="text" id="age" placeholder="1-100" value={age} /><br />
-        <label for="event">Event:</label><br />
-        <input type="text" id="event" placeholder="Event that happened" value={event} /><br />
+        <Input label="Age:" placeholder="1-100" value={age} id="age" />
+
+        <Input label="Event:" placeholder="Event that happened" value={event} id="event" />
       </form>
 
       <Events phases={phases} events={events} />
