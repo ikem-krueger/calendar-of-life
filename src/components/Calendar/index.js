@@ -1,6 +1,6 @@
 import { Year } from "../Year";
 
-const Calendar = ({ phases, events, selectedYear, editPhase }) => {
+const Calendar = ({ phases, events, selectedYear, setState }) => {
   const years = Object.keys(events).map(Number)
 
   return (
@@ -30,7 +30,9 @@ const Calendar = ({ phases, events, selectedYear, editPhase }) => {
                 if (year == selectedYear)
                   className.push("selectedYear")
 
-                return <Year key={rowNumber} phaseNumber={phaseNumber} year={year} className={className.join(" ")} editPhase={editPhase} />
+                className = className.join(" ")
+
+                return <Year key={year} phase={phases[--phaseNumber]} setState={setState} events={events} year={year} className={className} />
               })}
             </tr>
           )

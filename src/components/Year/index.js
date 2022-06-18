@@ -1,14 +1,24 @@
 import "./style.css";
 
-const Year = ({ phaseNumber, year, className, editPhase }) => {
-  function onClickHandler(e) {
-    const phaseNumber = e.target.dataset.phaseNumber
+const Year = ({ phase, events, setState, year, className }) => {
+  function onClickHandler() {
+    const range = phase ? phase.from + "-" + phase.to : ""
+    const name = phase ? phase.name : ""
+    const age = year
+    const event = events[year] || ""
 
-    editPhase(phaseNumber, year)
+    const state = { 
+      range: range, 
+      name: name, 
+      age: age, 
+      event: event 
+    }
+
+    setState(state)
   }
 
   return (
-    <td data-phase-number={phaseNumber} title={"Age: " + year} className={className} onClick={onClickHandler}></td>
+    <td title={"Age: " + year} className={className} onClick={onClickHandler}></td>
   )
 }
 

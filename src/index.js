@@ -25,7 +25,7 @@ const profile = {
 const App = () => {
   const [phases, setPhases] = useState(profile.phases)
   const [events, setEvents] = useState(profile.events)
-  
+
   const [selectedYear, setSelectedYear] = useState()
 
   const [range, setRange] = useState()
@@ -33,21 +33,15 @@ const App = () => {
   const [age, setAge] = useState()
   const [event, setEvent] = useState()
 
-  function editPhase(phaseNumber, selectedYear) {
-    const phase = phases[phaseNumber - 1]
-    const event = events[selectedYear]
+  function setState(state) {
+    const { range, name, age, event } = state
+    
+    setSelectedYear(age)
 
-    setSelectedYear(selectedYear)
-
-    if (phase) {
-      const { from, to, name } = phase
-
-      setRange(`${from}-${to}`)
-      setName(name)
-    }
-
-    setAge(selectedYear)
-    setEvent(event ? event : "")
+    setRange(range)
+    setName(name)
+    setAge(age)
+    setEvent(event)
   }
 
   return (
@@ -56,7 +50,7 @@ const App = () => {
 
       <h2>Years</h2>
 
-      <Calendar phases={phases} events={events} selectedYear={selectedYear} editPhase={editPhase} />
+      <Calendar phases={phases} events={events} selectedYear={selectedYear} setState={setState}/>
 
       <h2>Phases</h2>
 
