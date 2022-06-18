@@ -7,11 +7,11 @@ const Year = ({ phase, events, setState, year, className }) => {
     const age = year
     const event = events[year] || ""
 
-    const state = { 
-      range: range, 
-      name: name, 
-      age: age, 
-      event: event 
+    const state = {
+      range: range,
+      name: name,
+      age: age,
+      event: event
     }
 
     setState(state)

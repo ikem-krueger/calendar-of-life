@@ -35,7 +35,7 @@ const App = () => {
 
   function setState(state) {
     const { range, name, age, event } = state
-    
+
     setSelectedYear(age)
 
     setRange(range)
@@ -50,7 +50,7 @@ const App = () => {
 
       <h2>Years</h2>
 
-      <Calendar phases={phases} events={events} selectedYear={selectedYear} setState={setState}/>
+      <Calendar phases={phases} events={events} selectedYear={selectedYear} setState={setState} />
 
       <h2>Phases</h2>
 
