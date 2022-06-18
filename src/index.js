@@ -15,14 +15,12 @@ const profile = {
     { "from": 12, "to": 18, "name": "Adolescence" },
     { "from": 19, "to": 40, "name": "Early adulthood" },
     { "from": 40, "to": 65, "name": "Adulthood" },
-    { "from": 65, "to": 100, "name": "Mature adulthood" },
+    { "from": 65, "to": 100, "name": "Mature adulthood" }
   ],
   events: {
     1: "Year of birth"
   }
 }
-
-profile.events = {}
 
 const App = () => {
   const [phases, setPhases] = useState(profile.phases)
@@ -61,13 +59,25 @@ const App = () => {
     const { id } = target
 
     if (id == "range" || id == "name") {
-      const [from, to] = range.match(/(\d+)\-(\d+)/).slice(1)
+      let [from, to] = range.match(/(\d+)\-(\d+)/).slice(1)
+
+      from = parseInt(from)
+      to = parseInt(to)
 
       if (from && to && name) {
         if (from <= to) {
+          let phaseIndex
+
+          phases.forEach((phase, index) => {
+            if (phase.from == from && phase.to == to)
+              phaseIndex = index
+          })
+
           const phase = { from: from, to: to, name: name }
 
-          setPhases([...phases, phase])
+          phases[phaseIndex || phases.length] = phase
+
+          setPhases([...phases])
         }
       }
     }
