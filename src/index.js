@@ -66,16 +66,22 @@ const App = () => {
 
       if (from && to && name) {
         if (from <= to) {
-          let phaseIndex
-
-          phases.forEach((phase, index) => {
-            if (phase.from == from && phase.to == to)
-              phaseIndex = index
-          })
-
           const phase = { from: from, to: to, name: name }
 
-          phases[phaseIndex || phases.length] = phase
+          let index = -1
+
+          if (phases.length == 0)
+            index = 0
+
+          phases.forEach((phase, i) => {
+            if (phase.from == from && phase.to == to)
+              index = i
+          })
+
+          if (index == -1)
+            index = phases.length
+
+          phases[index] = phase
 
           setPhases([...phases])
         }
