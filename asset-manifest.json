@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/calendar-of-life/static/css/main.4b7cb920.css",
-    "main.js": "/calendar-of-life/static/js/main.3aa3146c.js",
+    "main.js": "/calendar-of-life/static/js/main.890ebb41.js",
     "index.html": "/calendar-of-life/index.html",
     "main.4b7cb920.css.map": "/calendar-of-life/static/css/main.4b7cb920.css.map",
-    "main.3aa3146c.js.map": "/calendar-of-life/static/js/main.3aa3146c.js.map"
+    "main.890ebb41.js.map": "/calendar-of-life/static/js/main.890ebb41.js.map"
   },
   "entrypoints": [
     "static/css/main.4b7cb920.css",
-    "static/js/main.3aa3146c.js"
+    "static/js/main.890ebb41.js"
   ]
 }
