@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Year = ({ phase, events, setState, year, className }) => {
-  function onClickHandler() {
+  function handleClick() {
     const range = phase ? phase.from + "-" + phase.to : ""
     const name = phase ? phase.name : ""
     const age = year
@@ -18,7 +18,7 @@ const Year = ({ phase, events, setState, year, className }) => {
   }
 
   return (
-    <td title={"Age: " + year} className={className} onClick={onClickHandler}></td>
+    <td title={"Age: " + year} className={className} onClick={handleClick}></td>
   )
 }
 

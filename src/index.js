@@ -44,6 +44,17 @@ const App = () => {
     setEvent(event)
   }
 
+  function setValue(target) {
+    const { id, value } = target
+
+    switch (id) {
+      case "range": setRange(value); break;
+      case "name":  setName(value);  break;
+      case "age":   setAge(value);   break;
+      case "event": setEvent(value); break;
+    }
+  }
+
   return (
     <div>
       <h1>Calender of life</h1>
@@ -55,9 +66,9 @@ const App = () => {
       <h2>Phases</h2>
 
       <form>
-        <Input label="Range:" placeholder="1-100" value={range} id="range" />
+        <Input label="Range:" placeholder="1-100" value={range} id="range" setValue={setValue} />
 
-        <Input label="Name:" placeholder="Name of the phase" value={name} id="name" />
+        <Input label="Name:" placeholder="Name of the phase" value={name} id="name" setValue={setValue} />
       </form>
 
       <Phases phases={phases} />
@@ -65,9 +76,9 @@ const App = () => {
       <h2>Events</h2>
 
       <form>
-        <Input label="Age:" placeholder="1-100" value={age} id="age" />
+        <Input label="Age:" placeholder="1-100" value={age} id="age" setValue={setValue} />
 
-        <Input label="Event:" placeholder="Event that happened" value={event} id="event" />
+        <Input label="Event:" placeholder="Event that happened" value={event} id="event" setValue={setValue} />
       </form>
 
       <Events phases={phases} events={events} />
