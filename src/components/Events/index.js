@@ -12,7 +12,7 @@ const Events = ({ phases, events }) => {
         let className
 
         phases.map((phase, i) => {
-          if (year >= phase.from && year <= phase.to)
+          if (year >= phase.start && year <= phase.end)
             className = "phase-" + (i + 1)
         })
 

@@ -15,7 +15,7 @@ const Calendar = ({ phases, events, selectedYear, setState }) => {
                 let phaseNumber
 
                 phases.map((currentPhase, i) => {
-                  if (year >= currentPhase.from && year <= currentPhase.to)
+                  if (year >= currentPhase.start && year <= currentPhase.end)
                     phaseNumber = (i + 1)
                 })
 

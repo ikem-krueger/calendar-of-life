@@ -8,14 +8,14 @@ import "./style.css";
 
 const profile = {
   phases: [
-    { "from": 1, "to": 1, "name": "Infancy" },
-    { "from": 2, "to": 3, "name": "Toddler age" },
-    { "from": 3, "to": 5, "name": "Playing age" },
-    { "from": 6, "to": 11, "name": "School age" },
-    { "from": 12, "to": 18, "name": "Adolescence" },
-    { "from": 19, "to": 40, "name": "Early adulthood" },
-    { "from": 40, "to": 65, "name": "Adulthood" },
-    { "from": 65, "to": 100, "name": "Mature adulthood" }
+    { "start": 1, "end": 1, "name": "Infancy" },
+    { "start": 2, "end": 3, "name": "Toddler age" },
+    { "start": 3, "end": 5, "name": "Playing age" },
+    { "start": 6, "end": 11, "name": "School age" },
+    { "start": 12, "end": 18, "name": "Adolescence" },
+    { "start": 19, "end": 40, "name": "Early adulthood" },
+    { "start": 40, "end": 65, "name": "Adulthood" },
+    { "start": 65, "end": 100, "name": "Mature adulthood" }
   ],
   events: {
     1: "Year of birth"
@@ -59,14 +59,14 @@ const App = () => {
     const { id } = target
 
     if (id == "range" || id == "name") {
-      let [from, to] = range.match(/(\d+)\-(\d+)/).slice(1)
+      let [start, end] = range.match(/(\d+)\-(\d+)/).slice(1)
 
-      from = parseInt(from)
-      to = parseInt(to)
+      start = parseInt(start)
+      end = parseInt(end)
 
-      if (from && to && name) {
-        if (from <= to) {
-          const phase = { from: from, to: to, name: name }
+      if (start && end && name) {
+        if (start <= end) {
+          const phase = { start: start, end: end, name: name }
 
           let index = -1
 
@@ -74,7 +74,7 @@ const App = () => {
             index = 0
 
           phases.forEach((phase, i) => {
-            if (phase.from == from && phase.to == to)
+            if (phase.start == start && phase.end == end)
               index = i
           })
 

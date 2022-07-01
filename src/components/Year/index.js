@@ -2,7 +2,7 @@ import "./style.css";
 
 const Year = ({ phase, events, setState, year, className }) => {
   function handleClick() {
-    const range = phase ? phase.from + "-" + phase.to : ""
+    const range = phase ? phase.start + "-" + phase.end : ""
     const name = phase ? phase.name : ""
     const age = year
     const event = events[year] || ""
